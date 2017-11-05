@@ -51,14 +51,15 @@ Follow this [instructions][guide_vtx] if you encounter one of the following erro
 * This host supports Intel VT-x, but Intel VT-x is disabled
 * The processor on this computer is not compatible with Hyper-V
 
-For any other problems **google is your friend**.
+For any other problems [google is your friend](http://www.giyf.com).
+
 
 ### Docker Dependencies
 
 The tutorial depends on 2 docker images:
 
-* **jaeo/dxlab-smart-cities** (~2 gb). Contain jupyter, spark, python3 + other dependencies
-* **rabbitmq:3-management** (~125 mb). Contain RabbitMQ and RabbitMQ web UI.
+* **[jaeo/dxlab-smart-cities][image_dxlab]** (~2 gb). Contain jupyter, spark, python3 + other dependencies
+* **[rabbitmq:3-management][image_rabbit]** (~125 mb). Contain RabbitMQ and RabbitMQ web UI.
 
 These images are in a public repository. You can download them by opening a **Docker Quick Start Terminal** (or a clasical terminal if running docker CE) and executing the following instruction:
 
@@ -66,11 +67,9 @@ These images are in a public repository. You can download them by opening a **Do
 $ docker pull jaeo/dxlab-smart-cities rabbitmq:3-management
 `
 
-You can verify the existence of the images by executing:
+You can verify the existence of the images in your machine by executing:
 
 `$ docker images`
-
-
 
 
 
@@ -88,4 +87,11 @@ You can verify the existence of the images by executing:
 [docker_tool4win]: https://docs.docker.com/toolbox/toolbox_install_windows
 [docker_4mac]: https://docs.docker.com/docker-for-mac/install
 [docker_4win]: https://docs.docker.com/docker-for-windows/install
+
+[image_rabbit]: https://hub.docker.com/_/rabbitmq/
+[image_dxlab]: https://hub.docker.com/r/jaeo/dxlab-smart-cities/ 
+
 [guide_vtx]: https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/
+
+
+
