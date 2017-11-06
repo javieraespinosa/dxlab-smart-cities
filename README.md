@@ -17,11 +17,15 @@
 
 The material is divided in 2 parts:
 
-* **[dxlab-smart-cities][dxlab]**: excercises and docker-configuration files (available the 1st day of the school).
-* **[dxlab-smart-cities-ds][dxlab_ds]**: dataset for the exercises (~30mb). 
+* **[dxlab-smart-cities][dxlab]**: excercises and docker-configuration files.
+* **[dxlab-smart-cities-ds][dxlab_ds]** (~30mb): dataset for the exercises. 
 
-Download both parts. Unzip `dxlab-smart-cities-ds/data.zip` into `dxlab-smart-cities/data`.
+Download both parts. Unzip `dxlab-smart-cities-ds/data.zip` into `dxlab-smart-cities/notebook/data`.
 
+> **IMPORTANT:**
+> 
+> + **dxlab-smart-cities-ds** is already available for download.
+> + **dxlab-smart-cities** will be available the 1st day of the school.
 
 ### Access Tokens
 
@@ -58,10 +62,10 @@ For any other problems [google is your friend](http://www.giyf.com).
 
 The tutorial depends on 2 docker images:
 
-* **[jaeo/dxlab-smart-cities][image_dxlab]** (~2 gb). Contain jupyter, spark, python3 + other dependencies
+* **[jaeo/dxlab-smart-cities][image_dxlab]** (~2 gb). Contain jupyter, spark, python3, node + [python/node libraries][dxlab_deps].
 * **[rabbitmq:3-management][image_rabbit]** (~125 mb). Contain RabbitMQ and RabbitMQ web UI.
 
-These images are in a public repository. You can download them by opening a **Docker Quick Start Terminal** (or a clasical terminal if running docker CE) and executing the following command:
+These images are in a public repository. You can download them by opening a **Docker Quick Start Terminal** (or a clasical terminal if not running Docker Toolbox) and executing the following command:
 
 `
 $ docker pull jaeo/dxlab-smart-cities  rabbitmq:3-management
@@ -90,6 +94,7 @@ You can verify the existence of the images in your machine by executing:
 
 [image_rabbit]: https://hub.docker.com/_/rabbitmq/
 [image_dxlab]: https://hub.docker.com/r/jaeo/dxlab-smart-cities/ 
+[dxlab_deps]: https://hub.docker.com/r/jaeo/dxlab-smart-cities/~/dockerfile/
 
 [guide_vtx]: https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/
 [board]: https://docs.google.com/document/d/1zjw73GByBPQwVrLfRCOxXVuiGTsIVnhD5CP37U1DF1A/edit?usp=sharing
