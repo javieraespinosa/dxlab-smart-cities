@@ -8,7 +8,7 @@
 * [Mapbox][mapbox_dev] and [Google Maps][google_dev] API access tokens
 * [Docker Community Edition][docker_ce] or [Docker Toolbox][docker_toolbox] (depending on your OS)
 * Tutorial [material][dxlab] and [dataset][dxlab_ds]
-* Whiteboard (for questions/answers during the tutorial) 
+* [Whiteboard][board] (for questions/answers during the tutorial) 
 
 
 ## Installation/Configuration
@@ -61,10 +61,10 @@ The tutorial depends on 2 docker images:
 * **[jaeo/dxlab-smart-cities][image_dxlab]** (~2 gb). Contain jupyter, spark, python3 + other dependencies
 * **[rabbitmq:3-management][image_rabbit]** (~125 mb). Contain RabbitMQ and RabbitMQ web UI.
 
-These images are in a public repository. You can download them by opening a **Docker Quick Start Terminal** (or a clasical terminal if running docker CE) and executing the following instruction:
+These images are in a public repository. You can download them by opening a **Docker Quick Start Terminal** (or a clasical terminal if running docker CE) and executing the following command:
 
 `
-$ docker pull jaeo/dxlab-smart-cities rabbitmq:3-management
+$ docker pull jaeo/dxlab-smart-cities  rabbitmq:3-management
 `
 
 You can verify the existence of the images in your machine by executing:
@@ -92,6 +92,6 @@ You can verify the existence of the images in your machine by executing:
 [image_dxlab]: https://hub.docker.com/r/jaeo/dxlab-smart-cities/ 
 
 [guide_vtx]: https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/
-
+[board]: https://docs.google.com/document/d/1zjw73GByBPQwVrLfRCOxXVuiGTsIVnhD5CP37U1DF1A/edit?usp=sharing
 
 
