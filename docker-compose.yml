@@ -1,0 +1,92 @@
+
+version: '3'
+services:
+
+  jupyter:
+    container_name: jupyter
+    build:    .
+    image:    jaeo/dxlab-smart-cities
+    command:  'pyspark --master local[2] --name "Spark Notebook" '
+    environment:
+      PYSPARK_DRIVER_PYTHON: jupyter
+      PYSPARK_DRIVER_PYTHON_OPTS: "notebook --port=8888 --allow-root --no-browser --NotebookApp.notebook_dir='/root/dxlab/notebook' --NotebookApp.token='' --NotebookApp.base_url=/ "
+      SPARK_CONF_DIR:   /root/dxlab/conf
+      SPARK_PUBLIC_DNS: localhost
+    ports:
+      - 4040:4040
+      - 8080:8080
+      - 8888:8888
+    volumes:
+      - .:/root/dxlab
+    extra_hosts:
+      - "rabbit:17.11.0.3"   
+      - "hub:17.11.0.5"   
+    networks:
+      default: 
+        ipv4_address: 17.11.0.2      
+
+  rabbit:
+    container_name: rabbit
+    image:    rabbitmq:3-management
+    hostname: rabbit
+    ports:
+      - 15672:15672 
+      - 5672:5672
+    networks:
+      default: 
+        ipv4_address: 17.11.0.3
+
+
+  webapp:
+    container_name: webapp
+    image:    jaeo/dxlab-smart-cities
+    command:  node ws_server.js    
+    ports:
+      - 3333:3333
+    volumes:
+      - .:/root/dxlab
+    working_dir: /root/dxlab/webapp
+    extra_hosts:
+      - "rabbit:17.11.0.3"    
+    networks:
+      default: 
+        ipv4_address: 17.11.0.4
+
+
+  hub:
+    container_name: hub
+    image:    jaeo/dxlab-smart-cities
+    command:  python ./notebook/scripts/rabbit-tcp-server.py      
+    volumes:
+      - .:/root/dxlab
+    working_dir: /root/dxlab
+    extra_hosts:
+      - "rabbit:17.11.0.3"          
+    networks:
+      default: 
+        ipv4_address: 17.11.0.5
+
+
+
+  producer:
+    container_name: producer
+    image:    jaeo/dxlab-smart-cities
+    command:  python ./notebook/scripts/producer.py
+    volumes:
+      - .:/root/dxlab
+    working_dir: /root/dxlab
+    extra_hosts:
+      - "rabbit:17.11.0.3"     
+    networks:
+      default: 
+        ipv4_address: 17.11.0.6
+
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+       config:
+         - subnet: 17.11.0.0/16        
+
+  

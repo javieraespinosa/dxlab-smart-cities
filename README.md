@@ -1,5 +1,5 @@
 
-# Big Data & Smart Cities Lab
+# Visualization of Big Urban Data
 
 [2nd French-Brazilian School on Big Data and Smart Cities][school], Natal, 8-10 November 2017.
 
