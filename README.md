@@ -83,10 +83,6 @@ You can verify the existence of the images in your machine by executing:
 
 `$ docker images`
 
-### Opening ports 
-
-
-https://www.howtogeek.com/122641/how-to-forward-ports-to-a-virtual-machine-and-use-it-as-a-server/
 
 
 
