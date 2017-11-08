@@ -47,15 +47,23 @@ The exercies use [Mapbox][mapbox_dev] and [Google Maps][google_dev] APIs. The AP
 	* [Install Docker Toolbox on macOS][docker_tool4mac]
 
 
-**Enabling Intel VT-x in BIOS**
-
-Follow this [instructions][guide_vtx] if you encounter one of the following error messages:
+If you encounter one of the following error messages:
 
 * VT-x/AMD-V hardware acceleration is not available on your system
 * This host supports Intel VT-x, but Intel VT-x is disabled
 * The processor on this computer is not compatible with Hyper-V
 
-For any other problems [google is your friend](http://www.giyf.com).
+Follow this [instructions][guide_vtx] for enabling virtualization in your machine. For any other problems [google is your friend](http://www.giyf.com).
+
+
+### Forwarding ports  
+
+**_Only for Docker Toolbox Users_**
+
+The exercises require to forward ports to the **default** virtual machine. Open Virtual Box and fordward the following ports ([how to forward ports](https://www.howtogeek.com/122641/how-to-forward-ports-to-a-virtual-machine-and-use-it-as-a-server/)):
+ 
+* 8080:8080
+* 4040:4040 
 
 
 ### Docker Dependencies
@@ -74,6 +82,11 @@ $ docker pull jaeo/dxlab-smart-cities  rabbitmq:3-management
 You can verify the existence of the images in your machine by executing:
 
 `$ docker images`
+
+### Opening ports 
+
+
+https://www.howtogeek.com/122641/how-to-forward-ports-to-a-virtual-machine-and-use-it-as-a-server/
 
 
 
